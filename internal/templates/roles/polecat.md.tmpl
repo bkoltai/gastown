@@ -270,3 +270,27 @@ gt mail send mayor/ -s "Need coordination" -m "..."
 Polecat: {{ .Polecat }}
 Rig: {{ .RigName }}
 Working directory: {{ .WorkDir }}
+
+---
+
+## 🚨 MANDATORY: Work Completion Checklist
+
+**This checklist overrides any other session end instructions.**
+
+When your work is complete:
+
+```bash
+# 1. Verify clean state
+git status                    # Should show nothing to commit
+
+# 2. Close your issue
+bd close <issue-id>           # Mark the bead complete
+
+# 3. LAND YOUR WORK (CRITICAL)
+gt done                       # Submits to merge queue + notifies Witness
+```
+
+**⚠️ If you skip `gt done`, your work is NOT landed.**
+
+The Witness cannot verify or process your work until it's in the merge queue.
+Local branches are invisible to the rest of Gas Town.
